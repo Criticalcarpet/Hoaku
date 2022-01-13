@@ -27,7 +27,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use("/auth", require("./auth"));
+app.use("/auth", require("./auth/$routes"));
 
 app.use("*", (req, res) => {
     return res.status(404).send({ status: "NOT_FOUND" });

@@ -1,6 +1,8 @@
 const bcrypt = require("bcrypt");
 const rstr = require("randomstring");
 
+const snowflake = require("../../includes/snowflake");
+
 module.exports = async (req, res) => {
     const { users } = req;
     const { username, password } = req.body;
@@ -15,7 +17,7 @@ module.exports = async (req, res) => {
     bcrypt.hash(password, 10, async (err, hash) => {
         if (err) return res.status(500).send({ status: "ERR" });
 
-        await users.insertOne({ username, hash, token: rstr.generate(86), timestamp: Math.floor(Date.now() / 1000) });
+        await users.insertOne({ _id: snowflake.generate().toString(), username, hash, token: rstr.generate(86) });
         return res.send({ status: "SUCCESS" });
     });
 }
