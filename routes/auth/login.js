@@ -16,6 +16,7 @@ module.exports = async (req, res) => {
     bcrypt.compare(password, account.hash, (err, result) => {
         if (err) return res.status(500).send({ status: "ERR" });
 
-        return res.send({ status: "SUCCESS", token: aes256.encrypt(process.env.TOKEN_ENCRYPTION_KEY, Buffer.from(account.token)).toString('base64') });
+        if (!result) return res.send({ status: "USERNAME_OR_PASS_INCORRECT" });
+        else return res.send({ status: "SUCCESS", token: aes256.encrypt(process.env.TOKEN_ENCRYPTION_KEY, Buffer.from(account.token)).toString('base64') });
     });
 }
