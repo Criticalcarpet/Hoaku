@@ -15,6 +15,11 @@ if (!process.env.MONGO_URI) {
     process.exit();
 }
 
+if (!process.env.TOKEN_ENCRYPTION_KEY) {
+    log.error(`Please set a secure token encryption key.`);
+    process.exit();
+}
+
 if (!process.env.PORT) {
     log.notice(`Port not found in .env, defaulting to 4554`);
     process.env.PORT = 4554;
@@ -30,4 +35,4 @@ if (!process.env.CORS) {
     process.env.CORS = "true";
 }
 
-require("./server");
+require("./routes/server");

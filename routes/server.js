@@ -1,4 +1,4 @@
-const log = require("./includes/log");
+const log = require("../includes/log");
 log.normal(`Initializing server`);
 
 const express = require("express");
@@ -10,10 +10,24 @@ const server = app.listen(process.env.PORT, process.env.ADDRESS, () => {
 
 if (process.env.CORS == "true") app.use(require("cors")());
 
-const mongo = require("mongo-express-req");
-app.use(mongo(process.env.MONGO_URI));
+app.use(express.json());
 
-app.use("/auth", require("./routes/auth"));
+app.use(async (req, res, next) => {
+    const { MongoClient } = require('mongodb');
+    const client = new MongoClient(process.env.MONGO_URI);
+    await client.connect();
+    const db = client.db();
+    req.db = db;
+    next();
+});
+
+app.use((req, res, next) => {
+    req.filter = require("../includes/filter");
+    
+    next();
+});
+
+app.use("/auth", require("./auth"));
 
 app.use("*", (req, res) => {
     return res.status(404).send({ status: "NOT_FOUND" });
