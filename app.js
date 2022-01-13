@@ -35,4 +35,6 @@ if (!process.env.CORS) {
     process.env.CORS = "true";
 }
 
+if (!fs.existsSync("content/")) fs.mkdirSync("content");
+
 require("./routes/server");

@@ -5,7 +5,8 @@ module.exports = async (req, res, next) => {
     if (!rawToken) return res.send({ status: "UNAUTHORIZED" });
     const token = aes256.decrypt(process.env.TOKEN_ENCRYPTION_KEY, Buffer.from(rawToken, "base64")).toString();
     
-    const { users } = req;
+    const { db } = req;
+    const users = db.collection("users");
 
     const accounts = await users.find({ token }).toArray();
     if (accounts.length == 0) return res.send({ status: "UNAUTHORIZED" });
