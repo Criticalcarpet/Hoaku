@@ -29,6 +29,7 @@ app.use((req, res, next) => {
 
 app.use("/auth", require("./auth/$routes"));
 app.use("/settings", require("./settings/$routes"));
+app.use("/file", require("./file/$routes"));
 
 app.use("*", (req, res) => {
     return res.status(404).send({ status: "NOT_FOUND" });
