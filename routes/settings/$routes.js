@@ -15,5 +15,6 @@ router.route("/displayname")
     .delete(require("./displayname$delete"));
 
 router.patch("/username", require("./username"));
+router.patch("/password", require("./password"));
 
 module.exports = router;
