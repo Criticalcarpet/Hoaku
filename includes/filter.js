@@ -28,6 +28,13 @@ module.exports = new Filter({
             allowedTypes: ["string"],
             minStringLength: 0,
             maxStringLength: 32
+        },
+
+        shortPost: {
+            prefix: "short_post",
+            allowedTypes: ["string"],
+            minStringLength: 1,
+            maxStringLength: 400
         }
     }
 });
