@@ -2,6 +2,8 @@ const router = require("express").Router();
 
 router.use(require("../$middleware/auth"));
 
-router.patch("/avatar", require("./avatar"));
+router.route("/avatar")
+    .patch(require("./avatar$patch"))
+    .delete(require("./avatar$delete"));
 
 module.exports = router;

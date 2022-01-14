@@ -1,3 +1,5 @@
+const log = require("../../includes/log");
+
 const path = require("path");
 const fs = require("fs");
 
@@ -33,7 +35,8 @@ module.exports = async (req, res) => {
         if (results.length == 1 && results[0].avatar) {
             const fileResults = await files.find({ _id: results[0].avatar }).toArray();
             await files.deleteOne({ _id: results[0].avatar });
-            fs.unlinkSync(path.join("./content/", fileResults[0].name));
+            if (fs.existsSync(path.join("./content/", fileResults[0].name))) fs.unlinkSync(path.join("./content/", fileResults[0].name));
+            else log.warning("A file that is trying to be deleted doesn't exist. Are you using the same database on a different computer?");
         }
 
         await users.updateOne({ _id: req.userID }, { $set: { avatar: req.fileID.toString() } });
