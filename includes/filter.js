@@ -15,5 +15,12 @@ module.exports = new Filter({
             minStringLength: 8,
             maxStringLength: 86
         },
+
+        bio: {
+            prefix: "bio",
+            allowedTypes: ["string"],
+            minStringLength: 0,
+            maxStringLength: 160
+        }
     }
 });
