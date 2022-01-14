@@ -1,5 +1,4 @@
 const { response } = require("express");
-const filter = require("../../includes/filter");
 
 module.exports = async (req, res) => {
     const users = req.db.collection("users");

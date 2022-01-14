@@ -1,10 +1,7 @@
-const { response } = require("express");
-const filter = require("../../includes/filter");
-
 module.exports = async (req, res) => {
     const { bio } = req.body;
 
-    if (!filter("bio", bio).passed) return res.send({ status: filter("bio", bio).error });
+    if (!req.filter("bio", bio).passed) return res.send({ status: req.filter("bio", bio).error });
 
     const users = req.db.collection("users");
 
