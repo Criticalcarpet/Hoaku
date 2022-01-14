@@ -1,4 +1,4 @@
-const log = require("../../includes/log");
+const log = require("../../../includes/log");
 
 const fs = require("fs");
 const path = require("path");

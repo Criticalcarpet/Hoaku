@@ -10,6 +10,15 @@ const server = app.listen(process.env.PORT, process.env.ADDRESS, () => {
 
 app.use(express.json());
 
+app.use(async (req, res, next) => {
+    const { MongoClient } = require('mongodb');
+    const client = new MongoClient(process.env.MONGO_URI);
+    await client.connect();
+    const db = client.db();
+    req.db = db;
+    next();
+});
+
 app.use("/file", require("./file/$routes"));
 
 app.use("/api", require("./api"));
