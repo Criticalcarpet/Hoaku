@@ -21,6 +21,13 @@ module.exports = new Filter({
             allowedTypes: ["string"],
             minStringLength: 0,
             maxStringLength: 160
+        },
+        
+        displayName: {
+            prefix: "displayname",
+            allowedTypes: ["string"],
+            minStringLength: 0,
+            maxStringLength: 32
         }
     }
 });

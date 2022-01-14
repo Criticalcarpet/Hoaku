@@ -10,6 +10,10 @@ router.route("/bio")
     .patch(require("./bio$patch"))
     .delete(require("./bio$delete"));
 
+router.route("/displayname")
+    .patch(require("./displayname$patch"))
+    .delete(require("./displayname$delete"));
+
 router.patch("/username", require("./username"));
 
 module.exports = router;
