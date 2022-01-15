@@ -105,3 +105,6 @@ dist
 
 # Content folder
 content/
+
+# Personal to-do file
+todo.md

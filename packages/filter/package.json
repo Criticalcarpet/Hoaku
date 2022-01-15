@@ -1,0 +1,21 @@
+{
+    "name": "@hoaku/filter",
+    "version": "1.0.2",
+    "description": "Checks if a variable meets certain requirements, like length or if it matches regex, all in one handy function.",
+    "main": "index.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Hoaku/Hoaku.git"
+    },
+    "keywords": [
+      "input filter",
+      "filter",
+      "hoaku"
+    ],
+    "author": "Realmy",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/Hoaku/Hoaku/issues"
+    },
+    "homepage": "https://github.com/Hoaku/Hoaku/tree/main/packages/filter#readme"
+}
