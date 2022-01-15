@@ -3,7 +3,6 @@
 </p>
 <h1 align="center">Hoaku</h1>
 
-# Hoaku
 A self-hosted social media network.
 
 ## Setup
