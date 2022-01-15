@@ -1,3 +1,8 @@
+<p align="center">
+  <img width="100" src="https://raw.githubusercontent.com/hoaku/hoaku/master/assets/hoaku.png" />
+</p>
+<h1 align="center">Hoaku</h1>
+
 # Hoaku
 A self-hosted social media network.
 
