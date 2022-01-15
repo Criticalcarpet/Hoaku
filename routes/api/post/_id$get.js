@@ -1,3 +1,5 @@
+const filterPost = require("./$filterPost");
+
 module.exports = async (req, res) => {
     const { posts } = req;
 
@@ -5,14 +7,7 @@ module.exports = async (req, res) => {
     if (results.length == 0) return res.status(404).send({ status: "NOT_FOUND" });
     const result = results[0];
 
-    const checkedResult = {
-        id: result._id,
-        body: result.body,
-        creator: result.creator,
-        likes: result.likes,
-        dislikes: result.dislikes,
-        edited: result.edited || false
-    }
+    const checkedResult = await filterPost(result, req);
 
     return res.send({ status: "SUCCESS", result: checkedResult });
 }
