@@ -31,7 +31,7 @@ module.exports = new Filter({
         },
 
         shortPost: {
-            prefix: "short_post",
+            prefix: "post_body",
             allowedTypes: ["string"],
             minStringLength: 1,
             maxStringLength: 400
