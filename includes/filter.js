@@ -1,4 +1,4 @@
-const Filter = require("@hoaku/filter");
+const Filter = require("../packages/filter");
 module.exports = new Filter({
     filters: {
         username: {

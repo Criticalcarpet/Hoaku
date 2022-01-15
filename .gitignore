@@ -108,3 +108,6 @@ content/
 
 # Personal to-do file
 todo.md
+
+# Config
+config.json

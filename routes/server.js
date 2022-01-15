@@ -19,6 +19,8 @@ app.use(async (req, res, next) => {
     next();
 });
 
-app.use("/file", require("./file/$routes"));
+const config = require("../config.json");
 
-app.use("/api", require("./api"));
+if (config.file) app.use("/file", require("./file/$routes"));
+
+if (config.api) app.use("/api", require("./api/$routes"));
