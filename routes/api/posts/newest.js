@@ -7,6 +7,7 @@ module.exports = async (req, res) => {
     if (!page) page = 0;
     if (page && isNaN(Number(page))) return res.send({ status: "PAGE_INCORRECT" });
     if (page && !isNaN(Number(page))) page = Number(page);
+    if (page && !isNaN(Number(page)) && page < 0) return res.send({ status: "DONT_BE_SO_NEGATIVE" });
 
     const postList = await posts.find().sort({ _id: -1 }).skip(page * 51).limit(51).toArray();
 
