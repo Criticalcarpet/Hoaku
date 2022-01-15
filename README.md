@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="100" src="https://raw.githubusercontent.com/hoaku/hoaku/master/assets/hoaku.png" />
+  <img width="100" src="https://raw.githubusercontent.com/Hoaku/Hoaku/main/assets/hoaku.png" />
 </p>
 <h1 align="center">Hoaku</h1>
 
