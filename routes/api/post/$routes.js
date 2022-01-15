@@ -7,6 +7,7 @@ router.use((req, res, next) => {
 });
 
 router.route("/:id")
+    .get(require("./_id$get"))
     .patch(authRequired, require("./_id$patch"))
     .delete(authRequired, require("./_id$delete"));
 
