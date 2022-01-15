@@ -1,5 +1,5 @@
-# Hoaku/Server
-Server/API for the Hoaku social media network.
+# Hoaku
+A self-hosted social media network.
 
 ## Setup
 1. Use the .env.template file to make an env file.
