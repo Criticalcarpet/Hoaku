@@ -10,5 +10,6 @@ module.exports = async (req, res) => {
     if (feedbackResults.length == 0) return res.send({ status: "NOT_DISLIKED" });
     
     await feedback.deleteOne({ on: id, user: userID, type: "dislike" });
+    await posts.updateOne({ _id: id }, { $inc: { dislikes: -1 } });
     return res.send({ status: "SUCCESS" });
 }

@@ -9,9 +9,11 @@ module.exports = async (req, res) => {
 
     if (feedbackResults.length == 0) {
         await feedback.insertOne({ _id: snowflake.generate().toString(), on: id, user: userID, type: "dislike" });
+        await posts.updateOne({ _id: id }, { $inc: { dislikes: 1 } });
         return res.send({ status: "SUCCESS" });
     } else if (feedbackResults[0].type == "like") {
         await feedback.updateOne({ _id: feedbackResults[0]._id }, { $set: { type: "dislike" } });
+        await posts.updateOne({ _id: id }, { $inc: { likes: -1, dislikes: 1 } });
         return res.send({ status: "SUCCESS" });
     } else if (feedbackResults[0].type == "dislike") return res.send({ status: "ALREADY_DISLIKED" });
 }

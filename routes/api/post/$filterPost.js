@@ -7,8 +7,8 @@ module.exports = async (post, req) => {
         id: post._id,
         body: post.body,
         creator: post.creator,
-        likes: likes,
-        dislikes: dislikes,
+        likes: post.likes,
+        dislikes: post.dislikes,
         edited: post.edited || false
     }
 }

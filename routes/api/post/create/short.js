@@ -4,7 +4,7 @@ module.exports = async (req, res) => {
 
     if (!req.filter("shortPost", body).passed) return res.send({ status: req.filter("shortPost", body).error });
 
-    await posts.insertOne({ _id: req.snowflake.generate().toString(), body, creator: req.userID });
+    await posts.insertOne({ _id: req.snowflake.generate().toString(), body, creator: req.userID, likes: 0, dislikes: 0 });
 
     return res.send({ status: "SUCCESS" });
 }
