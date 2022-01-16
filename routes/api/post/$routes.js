@@ -11,6 +11,7 @@ router.route("/:id")
     .patch(authRequired, require("./_id$patch"))
     .delete(authRequired, require("./_id$delete"));
 
+router.use("/:id", require("./_id/$routes"));
 router.use("/create", require("./create/$routes"));
 
 module.exports = router;

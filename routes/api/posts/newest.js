@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
     let filteredPosts = [];
 
     for (let i in postList) {
-        filteredPosts.push(await filterPost(postList[i]));
+        filteredPosts.push(await filterPost(postList[i], req));
     }
 
     return res.send({ status: "SUCCESS", posts: filteredPosts });
