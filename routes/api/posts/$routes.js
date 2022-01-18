@@ -8,5 +8,6 @@ router.use((req, res, next) => {
 
 router.get("/newest", require("./newest"));
 router.get("/popular", require("./popular"));
+router.get("/trending", require("./trending"));
 
 module.exports = router;
