@@ -4,6 +4,7 @@ module.exports = async (user, req) => {
         username: user.username,
         displayName: user.displayName || null,
         bio: user.bio || null,
-        avatar: user.avatar || null
+        avatar: user.avatar || null,
+        followers: user.followers || 0
     }
 }
