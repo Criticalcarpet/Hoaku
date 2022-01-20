@@ -11,4 +11,6 @@ router.get("/newest", require("./newest"));
 router.get("/popular", require("./popular"));
 router.get("/trending", require("./trending"));
 
+router.use("/user", require("./user/$routes"));
+
 module.exports = router;

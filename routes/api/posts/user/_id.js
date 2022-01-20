@@ -1,28 +1,19 @@
-const filterPost = require("../post/$filterPost");
+const filterPost = require("../../post/$filterPost");
 
 module.exports = async (req, res) => {
-    const { posts } = req;
+    const { posts, users } = req;
+    const { id } = req.params;
     let { p: page } = req.query;
+
+    const userResults = await users.find({ _id: id }).toArray();
+    if (userResults.length == 0) return res.status(404).send({ status: "NOT_FOUND" });
 
     if (!page) page = 0;
     if (page && isNaN(Number(page))) return res.send({ status: "PAGE_INCORRECT" });
     if (page && !isNaN(Number(page))) page = Number(page);
     if (page && !isNaN(Number(page)) && page < 0) return res.send({ status: "DONT_BE_SO_NEGATIVE" });
 
-    const postList = await posts.aggregate([
-        {
-            $lookup: {
-                from: "follows",
-                localField: "creator",
-                foreignField: "on",
-                as: "relationship"
-            }
-        },
-        { $match: { $or: [ { "relationship.user": req.userID }, { creator: req.userID } ] } },
-        { $sort: { _id: -1 } },
-        { $limit: 51 },
-        { $skip: page * 51 }
-    ]).toArray();
+    const postList = await posts.find({ creator: id }).sort({ _id: -1 }).skip(page * 51).limit(51).toArray();
 
     let filteredPosts = [];
 
