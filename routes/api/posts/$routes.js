@@ -6,6 +6,7 @@ router.use((req, res, next) => {
     next();
 });
 
+router.get("/", authRequired, require("./index"));
 router.get("/newest", require("./newest"));
 router.get("/popular", require("./popular"));
 router.get("/trending", require("./trending"));
