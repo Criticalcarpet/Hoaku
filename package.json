@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "start": "node .",
-    "dev": "nodemon ."
+    "setup": "node setup.js",
+    "fdev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run generate",
+    "bdev": "nodemon ."
   },
   "repository": {
     "type": "git",

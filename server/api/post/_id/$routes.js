@@ -1,5 +1,5 @@
 const router = require("express").Router({ mergeParams: true });
-const authRequired = require("../../../api/$middleware/auth");
+const authRequired = require("../../$middleware/auth");
 
 router.use((req, res, next) => {
     req.feedback = req.db.collection("feedback");

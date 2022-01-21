@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const authRequired = require("../../../api/$middleware/auth");
+const authRequired = require("../../$middleware/auth");
 
 router.post("/short", authRequired, require("./short"));
 

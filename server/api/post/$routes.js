@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const authRequired = require("../../api/$middleware/auth");
+const authRequired = require("../$middleware/auth");
 
 router.use((req, res, next) => {
     req.posts = req.db.collection("posts");
