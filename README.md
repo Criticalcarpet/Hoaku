@@ -7,7 +7,7 @@ A self-hosted social media network.
 
 ## Setup
 1. Use the .env.template file to make an env file.
-2. Run `npm i`.
+2. Run `npm i` (you may also need to run `npm i` in `./frontend`).
 3. Run `node .` or `npm start` to run the application.
 
 _If you're going to host Hoaku for production, using [pm2](https://npmjs.com/package/pm2) is recommended._
