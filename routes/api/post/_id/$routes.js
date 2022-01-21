@@ -15,4 +15,6 @@ router.route("/dislike")
     .put(authRequired, require("./dislike$put"))
     .delete(authRequired, require("./dislike$delete"));
 
+router.get("/feedback", authRequired, require("./feedback"));
+
 module.exports = router;
