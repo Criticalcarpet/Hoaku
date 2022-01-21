@@ -17,4 +17,6 @@ router.route("/dislike")
 
 router.get("/feedback", authRequired, require("./feedback"));
 
+router.use("/comment", require("./comment/$routes"));
+
 module.exports = router;
