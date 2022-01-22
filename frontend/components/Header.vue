@@ -8,6 +8,12 @@
             </div>
 
             <div class="menu_search">
+                <div class="search_container">
+                    <div class="mdi mdi-magnify"></div>
+
+                    <input type="text" placeholder="Search for posts or jump to a @user" />
+                </div>
+
                 <div class="menu">
                     <div class="menu_button">
                         <div class="mdi mdi-home"></div>
@@ -85,6 +91,33 @@
         height: 100%;
     }
 
+    .search_container {
+        height: 3.143rem;
+        width: 27.286rem;
+
+        background: var(--dark_bg_on_dark_bg);
+
+        border-radius: 100vw;
+
+        margin-right: 2.857rem;
+
+        padding: 0 1.429rem;
+
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+    }
+
+    .search_container > .mdi {
+        font-size: 1.857rem;
+
+        color: var(--text_light_darker_bg);
+    }
+
+    .search_container > input::placeholder {
+        color: var(--text_light_darker_bg);
+    }
+
     .menu_button {
         height: 100%;
         width: 3.857rem;
@@ -108,20 +141,14 @@
         font-size: 2.429rem;
 
         color: var(--text_light);
-
-        transition: 0.1s;
     }
 
     .menu_button:not(.active):hover > .mdi {
         color: var(--text_light_darker_bg);
-
-        transition: 0.1s;
     }
 
     .menu_button.active > .mdi {
         color: var(--accent);
-
-        transition: 0.1s;
     }
 
     .compose_button {
@@ -137,13 +164,9 @@
         justify-content: center;
 
         margin-left: 1.429rem;
-
-        transition: 0.2s;
     }
 
     .compose_button:hover {
-        transform: scale(1.15);
-
         cursor: pointer;
     }
 
@@ -151,13 +174,5 @@
         font-size: 1.714rem;
 
         color: white;
-
-        transition: 0.2s;
-    }
-
-    .compose_button:hover > .mdi {
-        transition: 0.2s;
-
-        transform: rotate(1turn);
     }
 </style>
