@@ -38,6 +38,15 @@ main {
     margin: 0 auto;
 }
 
+main.content {
+    margin: 2.143rem auto;
+
+    display: grid;
+    grid-template-columns: 17.857rem auto 17.857rem;
+
+    height: calc(100vh - 5.786rem - 2.143rem - 2.143rem)
+}
+
 input[type="text"] {
     border: none;
     outline: none;

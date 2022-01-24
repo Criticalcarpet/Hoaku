@@ -43,6 +43,9 @@
         display: block;
 
         border-bottom: 0.071rem solid var(--border);
+
+        position: sticky;
+        z-index: 2;
     }
 
     main {
@@ -101,11 +104,11 @@
 
         margin-right: 2.857rem;
 
-        padding: 0 1.429rem;
+        padding: 0 1.143rem;
 
         display: flex;
         align-items: center;
-        column-gap: 1rem;
+        column-gap: 0.714rem;
     }
 
     .search_container > .mdi {
@@ -152,6 +155,8 @@
     }
 
     .compose_button {
+        cursor: pointer;
+
         height: 3.571rem;
         width: 3.571rem;
 
@@ -166,8 +171,8 @@
         margin-left: 1.429rem;
     }
 
-    .compose_button:hover {
-        cursor: pointer;
+    .compose_button:active {
+        transform: scale(0.92);
     }
 
     .compose_button > .mdi {

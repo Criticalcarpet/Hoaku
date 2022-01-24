@@ -1,5 +1,11 @@
 <template>
-    <Header />
+    <div>
+        <Header />
+
+        <main class="content">
+            <LeftSidebar />
+        </main>
+    </div>
 </template>
 
 <script>

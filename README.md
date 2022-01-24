@@ -5,6 +5,8 @@
 
 A self-hosted social media network.
 
+**Hoaku is not ready for production use yet!**
+
 ## Setup
 1. Use the .env.template file to make an env file.
 2. Run `npm i` (you may also need to run `npm i` in `./frontend`).
