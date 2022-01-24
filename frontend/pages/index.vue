@@ -4,6 +4,10 @@
 
         <main class="content">
             <LeftSidebar />
+
+            <div></div>
+
+            <RightSidebar />
         </main>
     </div>
 </template>

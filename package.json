@@ -1,6 +1,6 @@
 {
   "name": "@hoaku/server",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Server/API for the Hoaku social media network.",
   "main": "app.js",
   "scripts": {
